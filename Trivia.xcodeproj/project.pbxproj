@@ -51,6 +51,7 @@
 		9926AB4429DFAE1500860532 /* TriviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaUITests.swift; sourceTree = "<group>"; };
 		9926AB4629DFAE1500860532 /* TriviaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9926AB5329DFB8FA00860532 /* TriviaQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestion.swift; sourceTree = "<group>"; };
+		F757DF842AD91ADA00621F1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		9926AB1729DFAE1300860532 = {
 			isa = PBXGroup;
 			children = (
+				F757DF842AD91ADA00621F1D /* README.md */,
 				9926AB2229DFAE1400860532 /* Trivia */,
 				9926AB3929DFAE1500860532 /* TriviaTests */,
 				9926AB4329DFAE1500860532 /* TriviaUITests */,
