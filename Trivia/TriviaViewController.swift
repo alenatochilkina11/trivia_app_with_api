@@ -7,6 +7,29 @@
 
 import UIKit
 
+extension String {
+
+    init?(htmlEncodedString: String) {
+
+        guard let data = htmlEncodedString.data(using: .utf8) else {
+            return nil
+        }
+
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+
+        guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
+            return nil
+        }
+
+        self.init(attributedString.string)
+
+    }
+
+}
+
 class TriviaViewController: UIViewController {
     
     @IBOutlet weak var currentQuestionNumberLabel: UILabel!
@@ -41,7 +64,7 @@ class TriviaViewController: UIViewController {
     
     private func configure(with triviaQuestion: TriviaQuestion) {
         currentQuestionNumberLabel.text = "Question: 1/\(questions.count)"
-        questionLabel.text = triviaQuestion.question
+        questionLabel.text = String(htmlEncodedString: triviaQuestion.question)
         categoryLabel.text = triviaQuestion.category
         
         var answers = [String]()
@@ -59,7 +82,7 @@ class TriviaViewController: UIViewController {
     private func updateQuestion(withQuestionIndex questionIndex: Int) {
         currentQuestionNumberLabel.text = "Question: \(questionIndex + 1)/\(questions.count)"
         let question = questions[questionIndex]
-        questionLabel.text = question.question
+        questionLabel.text = String(htmlEncodedString: question.question)
         categoryLabel.text = question.category
         let answers = ([question.correctAnswer] + question.incorrectAnswers).shuffled()
         if answers.count > 0 {
