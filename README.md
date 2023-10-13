@@ -2,7 +2,7 @@
 
 Submitted by: **Alena Tochilkina**
 
-**Trivia** is an app that ... [TODO] 
+**Trivia** is an app that presents the user with multiple questions and 4 answer options out of which only one answer is correct. The user picks answers and recieves score at the end of the game.
 
 Time spent: **10** hours spent in total
 
@@ -10,16 +10,15 @@ Time spent: **10** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] User can view and answer at least 5 trivia questions.
-- [ ] App retrieves question data from the Open Trivia Database API.
-- [ ] Fetch a different set of questions if the user indicates they would like to reset the game.
-- [ ] Users can see score after submitting all questions.
-- [ ] True or False questions only have two options.
+- [X] User can view and answer at least 5 trivia questions.
+- [X] App retrieves question data from the Open Trivia Database API.
+- [X] Fetch a different set of questions if the user indicates they would like to reset the game.
+- [X] Users can see score after submitting all questions.
+- [X] True or False questions only have two options.
 
 
 The following **optional** features are implemented:
 
-  
 - [ ] Allow the user to choose a specific category of questions.
 - [ ] Provide the user feedback on whether each question was correct before navigating to the next.
 
@@ -29,17 +28,15 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README. 
-
-[Guide]](https://www.youtube.com/watch?v=GA92eKlYio4) .
+[Video Walkthrough](https://submissions.us-east-1.linodeobjects.com/ios101/2XrP26UU.gif) .
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Updating User Interface is supposed to be done of the Main application thread, and figuring out how to make the asynchronous API fetch call and then update the UI when before the view appears on the screen was tricky.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Alena Tochilkina]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
