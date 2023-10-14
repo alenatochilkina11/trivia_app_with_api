@@ -67,10 +67,8 @@ class TriviaViewController: UIViewController {
         questionLabel.text = String(htmlEncodedString: triviaQuestion.question)
         categoryLabel.text = triviaQuestion.category
         
-        var answers = [String]()
-        answers.append(triviaQuestion.correctAnswer)
-        answers.append(contentsOf: triviaQuestion.incorrectAnswers)
-        answers = answers.shuffled()
+        let answers = ([String(htmlEncodedString: triviaQuestion.correctAnswer)] +
+                       triviaQuestion.incorrectAnswers.map{(str) -> String in return String(htmlEncodedString: str)!}).shuffled()
         
         answerButton0.setTitle(answers[0], for: .normal)
         answerButton1.setTitle(answers[1], for: .normal)
@@ -83,8 +81,9 @@ class TriviaViewController: UIViewController {
         currentQuestionNumberLabel.text = "Question: \(questionIndex + 1)/\(questions.count)"
         let question = questions[questionIndex]
         questionLabel.text = String(htmlEncodedString: question.question)
-        categoryLabel.text = question.category
-        let answers = ([question.correctAnswer] + question.incorrectAnswers).shuffled()
+        categoryLabel.text = String(htmlEncodedString: question.category)
+        let answers = ([String(htmlEncodedString: question.correctAnswer)] +
+                       question.incorrectAnswers.map{(str) -> String in return String(htmlEncodedString: str)!}).shuffled()
         if answers.count > 0 {
             answerButton0.setTitle(answers[0], for: .normal)
         }
